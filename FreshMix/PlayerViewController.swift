@@ -2,8 +2,8 @@
 //  PlayerViewController.swift
 //  FreshMix
 //
-//  Created by Dunkley, Rachel A on 11/18/17.
-//  Copyright © 2017 Dunkley, Rachel A. All rights reserved.
+//  Created by Dunkley, Rachel A on 11/18/18.
+//  Copyright © 2018 Dunkley, Rachel A. All rights reserved.
 //
 
 import UIKit
