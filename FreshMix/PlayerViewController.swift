@@ -22,10 +22,6 @@ class PlayerViewController: UIViewController {
          Need to notify of song change, so view can
          update song info to the NEW song.
          */
-//        repeatOnOff.isOn = false
-//        
-//        shuffleOnOff.isOn = false
-        
         musicPlayer.beginGeneratingPlaybackNotifications()
         NotificationCenter.default.addObserver(
             self,
@@ -76,17 +72,16 @@ class PlayerViewController: UIViewController {
     
     
     
+    // Variables for accessing audioplayer and music model
     var audioPlayer = AVAudioPlayer()
     var musicModel = MusicModel()
     var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     var genre: String!
-    
-    
+
     @IBOutlet weak var songTitleLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var coverImage: UIImageView!
     @IBOutlet weak var trackSlider: UISlider!
-    
     let MPMediaItemPropertyTitle : String = ""
     
     
@@ -110,7 +105,7 @@ class PlayerViewController: UIViewController {
         
         shuffleOnOff.isOn = true
         //musicPlayer.shuffleMode = .songs
-
+        
         repeatOnOff.isOn = false
         
         
@@ -124,11 +119,11 @@ class PlayerViewController: UIViewController {
      Sets to default string and a default picture if = nil.
      */
     func updateCurrentItemMetadata() {
-
+        
         if(repeatOnOff.isOn == false){
             musicPlayer.repeatMode = .none
         }
-   
+        
         
         if(shuffleOnOff.isOn == true){
             musicPlayer.shuffleMode = .songs
@@ -136,12 +131,6 @@ class PlayerViewController: UIViewController {
         else{
             musicPlayer.shuffleMode = .off
         }
-
-        
-        
-        
-        
-        
         
         
         if let nowPlayingItem = musicPlayer.nowPlayingItem {
@@ -196,7 +185,7 @@ class PlayerViewController: UIViewController {
             musicPlayer.repeatMode = .none
         }
         else {
-           musicPlayer.repeatMode = .one
+            musicPlayer.repeatMode = .one
         }
     }
     
@@ -272,25 +261,7 @@ class PlayerViewController: UIViewController {
         else {
             musicPlayer.shuffleMode = .songs
         }
-
-        
-        
-        
-//        if shuffleSwitchIsOn == true {
-//            musicPlayer.shuffleMode = .songs
-//        }
-//        else{
-//            musicPlayer.shuffleMode = .off
-//        }
- 
-        
-        
     }
-    
-    
-    
-    
-    
     
     /*
      Methods to observe the notifications
